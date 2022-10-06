@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movil/pages/home_page.dart';
+import 'package:movil/pages/publisher.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -201,7 +203,12 @@ class Botones extends StatelessWidget {
           width: double.infinity,
           height: 50,
           child: OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Publisher()),
+              );
+            },
             child: Text(
               'Inicia con Google',
               style: TextStyle(
@@ -217,9 +224,14 @@ class Botones extends StatelessWidget {
           width: double.infinity,
           height: 50,
           child: OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              );
+            },
             child: Text(
-              'Inicia con Facebook',
+              'Buscar Empleos',
               style: TextStyle(
                 color: Color(0xff142047),
                 fontWeight: FontWeight.bold,
