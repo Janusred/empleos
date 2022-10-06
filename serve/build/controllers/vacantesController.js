@@ -17,16 +17,16 @@ class VacantesController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const games = yield database_1.default.query('SELECT * FROM vacante');
-            res.json(games); // consulta de datos en vista json
+            const vacantes = yield database_1.default.query('SELECT * FROM vacante');
+            res.json(vacantes); // consulta de datos en vista json
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const games = yield database_1.default.query('SELECT * FROM vacante WHERE id = ?', [id]);
-            if (games.lenth > 0) {
-                return res.json(games[0]);
+            const vacantes = yield database_1.default.query('SELECT * FROM vacante WHERE id = ?', [id]);
+            if (vacantes.lenth > 0) {
+                return res.json(vacantes[0]);
             }
             res.status(404).json({ text: 'no existe' });
         });
@@ -41,7 +41,7 @@ class VacantesController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const { id } = req.params;
-            const oldGame = req.body;
+            const oldVacante = req.body;
             yield database_1.default.query('UPDATE vacante set ? WHERE id = ?', [req.body, id]);
             res.json({ message: "Actualizado" });
         });

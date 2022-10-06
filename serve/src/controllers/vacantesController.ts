@@ -5,18 +5,16 @@ class VacantesController {
 
     public async list(req: Request, res: Response) {
         const {id} = req.params;
-        const games = await pool.query('SELECT * FROM vacante');
-        
-        
-        res.json(games);// consulta de datos en vista json
+        const vacantes = await pool.query('SELECT * FROM vacante');
+        res.json(vacantes);// consulta de datos en vista json
 
     }
     public  async getOne(req: Request, res: Response) {
           const {id} = req.params;
-         const games = await pool.query('SELECT * FROM vacante WHERE id = ?', [id]);
+         const vacantes = await pool.query('SELECT * FROM vacante WHERE id = ?', [id]);
         
-         if (games.lenth > 0){
-             return res.json(games[0]);
+         if (vacantes.lenth > 0){
+             return res.json(vacantes[0]);
          }
          res.status(404).json({text:'no existe'});
 
@@ -30,7 +28,7 @@ class VacantesController {
     }
     public async update(req: Request, res: Response) {
        const { id } = req.params;
-       const oldGame = req.body;
+       const oldVacante = req.body;
        await pool.query('UPDATE vacante set ? WHERE id = ?', [req.body, id]);
        res.json({ message: "Actualizado" });
        

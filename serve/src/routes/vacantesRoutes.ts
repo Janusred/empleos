@@ -1,4 +1,5 @@
 import { Router } from "express";
+import vacantesController from "../controllers/vacantesController";
 
 class VacantesRoutes{
 
@@ -7,7 +8,12 @@ class VacantesRoutes{
 this.config();
     }
     config():void{
-        this.router.get('/',(req, res)=> res.send('Vacantes'));
+      //  this.router.get('/',(req, res)=> res.send('Vacantes'));
+      this.router.get('/', vacantesController.list);
+      this.router.get('/:id',vacantesController.getOne);
+        
+        this.router.post('/',vacantesController.create);
+        this.router.put('/:id',vacantesController.update);
     }
 }
 
