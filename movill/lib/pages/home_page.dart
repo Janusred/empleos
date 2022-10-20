@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:movill/pages/home_page.dart';
+import 'package:movill/pages/practica.dart';
+/*import 'package:flutter/services.dart';
+import 'package:movill/pages/home_page.dart';*/
 
 void main() => runApp(HomePage());
 
@@ -12,7 +13,16 @@ class HomePage extends StatelessWidget {
       theme: ThemeData(primaryColor: Colors.green),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Bolsa de empleo UT-Tlaxcala"),
+          title: Text("Vacantes del dia "),
+          leading: IconButton(
+            icon: Icon(Icons.attribution_outlined),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => PracPage()),
+              );
+            },
+          ),
         ),
         body: ListView(
           children: [
@@ -32,10 +42,34 @@ class HomePage extends StatelessWidget {
                     leading: Icon(Icons.list),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      FlatButton(onPressed: () => {}, child: Text('Llamar')),
-                      FlatButton(onPressed: () => {}, child: Text('Correo'))
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        //padding: EdgeInsets.all(10),
+                        onPressed: () {},
+                        color: Colors.green[400],
+                        child: Text(
+                          'Llamar',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 60,
+                      ),
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {},
+                        color: Colors.green[400],
+                        child: Text(
+                          'Cancelar',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ],
                   )
                 ],
@@ -48,6 +82,7 @@ class HomePage extends StatelessWidget {
               elevation: 10,
               child: Column(
                 children: <Widget>[
+                  Image.asset('img/img-1.jpeg'),
                   ListTile(
                     contentPadding: EdgeInsets.fromLTRB(15, 10, 25, 0),
                     title: Text('Titulo de la vacante'),
@@ -55,10 +90,19 @@ class HomePage extends StatelessWidget {
                     leading: Icon(Icons.list),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      FlatButton(onPressed: () => {}, child: Text('Llamar')),
-                      FlatButton(onPressed: () => {}, child: Text('Correo'))
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {},
+                        color: Colors.green[400],
+                        child: Text(
+                          'Ver Gran premio de USA-Mexico',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ],
                   )
                 ],

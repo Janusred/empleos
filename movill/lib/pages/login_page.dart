@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:movill/pages/Admin_page.dart';
+//import 'package:flutter/services.dart';
 import 'package:movill/pages/home_page.dart';
 
 void main() => runApp(LoginPage());
@@ -29,6 +30,10 @@ class LoginPage extends StatelessWidget {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
+              margin: EdgeInsets.all(15),
+              elevation: 10,
               child: Column(
                 children: <Widget>[
                   ListTile(
@@ -44,49 +49,81 @@ class LoginPage extends StatelessWidget {
                   SizedBox(
                     height: 30,
                   ),
-                  TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Ingresa tu correo',
+                  SizedBox(
+                    width: 300.0,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Ingresa tu correo',
+                      ),
                     ),
                   ),
                   SizedBox(
                     height: 30,
                   ),
-                  TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Password',
+                  SizedBox(
+                    width: 300.0,
+                    child: TextField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Password',
+                      ),
                     ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      RaisedButton(
-                          disabledColor: Colors.greenAccent,
-                          onPressed: () => {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => HomePage()),
-                                ),
-                              },
-                          child: Text(
-                            'Aceptar',
-                            textAlign: TextAlign.center,
-                          )),
-                      SizedBox(
-                        width: 60,
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => HomePage()),
+                          );
+                        },
+                        color: Colors.green[400],
+                        child: Text(
+                          'Aceptar',
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ),
-                      RaisedButton(
-                        disabledColor: Colors.amberAccent,
-                        onPressed: () => {},
+                      SizedBox(
+                        width: 30,
+                      ),
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {},
+                        color: Colors.green[400],
                         child: Text(
                           'Cancelar',
-                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white),
                         ),
-                      )
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AdminPage()),
+                          );
+                        },
+                        color: Colors.green[400],
+                        child: Text(
+                          'Adminitrador',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
                     ],
                   )
                 ],
