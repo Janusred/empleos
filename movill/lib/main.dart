@@ -12,3 +12,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false, home: LoginPage());
   }
 }
+
+
+
+
+
+
+
+
+/*  Card(
+              // tTarjeta de perfiles
+
+              elevation: 10,
+              shape: RoundedRectangleBorder(
+                borderRadius: const BorderRadius.all(Radius.circular(20)),
+              ),
+
+              child: const SizedBox(
+                width: 300,
+                height: 100,
+                child: Center(child: Text('Desarrollado por JAH DEVELOPERS')
+                
+                ),
+              ),
+            ),*/ 

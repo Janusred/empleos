@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 /*import 'package:flutter/services.dart';*/
 import 'package:movill/pages/home_page.dart';
+import 'package:movill/pages/jonh-page.dart';
 
-void main() => runApp(PracPage());
+void main() => runApp(AstridPage());
 
-class PracPage extends StatelessWidget {
+class AstridPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: Colors.green),
+      theme: ThemeData(primaryColor: Colors.purple),
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("Janus Developers"),
+          title: Text("Astrid Developers"),
           leading: IconButton(
             icon: Icon(Icons.g_mobiledata_sharp),
             onPressed: () {
@@ -33,22 +34,22 @@ class PracPage extends StatelessWidget {
               elevation: 10,
               child: Column(
                 children: <Widget>[
-                  Image.asset('img/janus.jpeg'),
+                  Image.asset('img/astrid-1.jpeg'),
                   ListTile(
                     contentPadding: EdgeInsets.fromLTRB(15, 10, 25, 0),
-                    title: Text('T.S.U Horacio Carmona Sanchez'),
+                    title: Text('T.S.U Astrid Deyadira Loaiza González'),
                     subtitle: Text(
                         'Cursando 10° cuatrimestre de la carrera de ingeneria en tecnologias de la informacion area desarrollo y gestion de software'),
                     leading: Icon(Icons.verified_user_outlined),
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       MaterialButton(
                         minWidth: 100.0,
                         height: 30.0,
                         onPressed: () {},
-                        color: Colors.green[400],
+                        color: Colors.orange[400],
                         child: Text(
                           'Correo',
                           style: TextStyle(color: Colors.white),
@@ -58,7 +59,7 @@ class PracPage extends StatelessWidget {
                         minWidth: 100.0,
                         height: 30.0,
                         onPressed: () {},
-                        color: Colors.green[400],
+                        color: Colors.purple[400],
                         child: Text(
                           'Llamar',
                           style: TextStyle(color: Colors.white),
@@ -67,10 +68,15 @@ class PracPage extends StatelessWidget {
                       MaterialButton(
                         minWidth: 100.0,
                         height: 30.0,
-                        onPressed: () {},
-                        color: Colors.green[400],
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => JonhPage()),
+                          );
+                        },
+                        color: Colors.orange[400],
                         child: Text(
-                          'WhatsApp',
+                          'Su toxico',
                           style: TextStyle(color: Colors.white),
                         ),
                       )

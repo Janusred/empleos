@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movill/pages/Admin_page.dart';
-//import 'package:flutter/services.dart';
+import 'package:movill/pages/astrid_page.dart';
 import 'package:movill/pages/home_page.dart';
+import 'package:movill/pages/jonh-page.dart';
+import 'package:movill/pages/practica.dart';
 
 void main() => runApp(LoginPage());
 
@@ -94,15 +96,21 @@ class LoginPage extends StatelessWidget {
                         width: 30,
                       ),
                       MaterialButton(
-                        minWidth: 100.0,
+                        minWidth: 10.0,
                         elevation: 10,
                         height: 30.0,
-                        onPressed: () {},
-                        color: Colors.green[400],
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AdminPage()),
+                          );
+                        },
                         child: Text(
                           'Cancelar',
                           style: TextStyle(color: Colors.white),
                         ),
+                        color: Colors.green[400],
                       ),
                       SizedBox(
                         width: 30,
@@ -128,7 +136,95 @@ class LoginPage extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            //CardTheme()
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Card(
+                  margin: EdgeInsets.all(15),
+                  elevation: 10,
+                  child: Column(
+                    children: <Widget>[
+                      GestureDetector(
+                        //generamos una ruta dentro de una imagen
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        }, // Image tapped
+                        child: Expanded(
+                          flex: 2,
+                          child: Image.asset(
+                            'img/tlax.png',
+                            width: 350,
+                            height: 200,
+                          ),
+                        ),
+                      ),
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => PracPage()),
+                          );
+                        },
+                        color: Colors.green[400],
+                        child: Text(
+                          'Horacio',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AstridPage()),
+                          );
+                        },
+                        color: Colors.green[400],
+                        child: Text(
+                          'Astrid',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      MaterialButton(
+                        minWidth: 100.0,
+                        elevation: 10,
+                        height: 30.0,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => JonhPage()),
+                          );
+                        },
+                        color: Colors.green[400],
+                        child: Text(
+                          'Jonathan',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                      /* Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Expanded(flex: 1, child: Image.asset('img/JAH.png')),
+                          Expanded(child: Image.asset('img/tlax.png')),
+                        ],
+                      )*/
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

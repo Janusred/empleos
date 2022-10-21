@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movill/pages/login_page.dart';
 import 'package:movill/pages/practica.dart';
 /*import 'package:flutter/services.dart';
 import 'package:movill/pages/home_page.dart';*/
@@ -99,7 +100,21 @@ class AdminPage extends StatelessWidget {
               elevation: 10,
               child: Column(
                 children: <Widget>[
-                  Image.asset('img/img-1.jpeg'),
+                  GestureDetector(
+                    //generamos una ruta dentro de una imagen
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    }, // Image tapped
+                    child: Image.asset(
+                      'img/code.jpeg',
+                      fit: BoxFit.cover, // Fixes border issues
+                      width: 200.0,
+                      height: 200.0,
+                    ),
+                  ),
                   ListTile(
                     contentPadding: EdgeInsets.fromLTRB(15, 10, 25, 0),
                     title: Text('Desarrollador web'),
